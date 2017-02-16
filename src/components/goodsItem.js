@@ -8,14 +8,19 @@ export default class GoodsItem extends Component {
   render() {
      const {id, name, description, price, brand, src, features} = this.props.gooditem;
     return(
-      <div className="medium-6 column">
-        <div className="callout">
-          <p>{name}</p>
-          <p>{description}</p>
-          <p>{price}$</p>
-          <img src={src}></img>
-          <p>{features}</p>
-          <button className="button hollow"  onClick={() => this.onInputChange(id, name, src, price)}>Add to cart</button>
+      <div className="large-6 column">
+        <div className="item_goods cf">
+
+          <div>
+            <p className="gd_name">{name}</p>
+            <p className="gd_price">{price}$</p>
+          </div>
+
+          <p className="gd_desc cf">{description}</p>
+          <img className="gd_photo cf"src={src}></img>
+          <p className="gd_features">{features}</p>
+
+            <button className="button hollow add_btn"  onClick={() => this.onInputChange(id, name, src, price)}>Add to cart</button>
         </div>
       </div>
     );

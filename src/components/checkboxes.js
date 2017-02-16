@@ -17,7 +17,8 @@ export default class checkBoxes extends Component {
     let data = this.props.data;
     let opt = this.props.opt;
     return(
-      <div>
+      <div className="checkboxes">
+      <p>Phone finder</p>
         <div>
           <label>
           <input type="checkbox" checked={data[0].status}  onChange={() => this.getData("nokia")} />Nokia</label>

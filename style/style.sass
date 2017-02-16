@@ -1,0 +1,175 @@
+$btn_color: purple
+$check_color: #9932CC
+$added_item_color: #F8F8FF
+
+*
+  font-family: "Comic Sans MS", cursive, sans-serif
+
+.app
+  height: 50px
+  background-color: purple
+
+
+.top-bar
+  background-color: purple
+  color: white
+  font-weight: 700
+  height: 50px
+
+.top-bar-left
+  padding-top: 5px
+
+
+.hide_cart
+  display: none
+
+.cart
+  position: relative
+
+.cart_btn
+  position: absolute
+  top: 0
+  right: 140px
+  height: 50px
+  background-color: $btn_color
+  outline: none
+  font-weight: 700
+.button:hover
+  background-color: $btn_color
+.button:focus
+  background-color: $btn_color
+
+.search_bar
+  padding: 20px 0
+  display: flex
+  justify-content: flex-start
+  button
+    float: right
+    border-radius: 4px
+    background-color: $btn_color
+    outline: none
+    :hover
+      background-color: $btn_color
+    :focus
+      background-color: $btn_color
+  input
+    margin-left: 12px
+    width: 77%
+    display: inline
+
+.cf:after, .cf:before
+  content: " "
+  display: table
+.cf:after
+  clear: both
+.checkboxes
+  padding-top: 30px
+.checkboxes, label
+  color: $check_color
+
+.column:last-child:not(:first-child)
+  float: left
+
+.show_cart
+  width: 350px
+  position: absolute
+  right: 137px
+  z-index: 1
+  .x_btn
+    padding: 0 10px
+    outline: none
+  button
+    outline: none
+  ul
+    list-style-type: none
+  img
+    width: 20px
+  .add_item
+    background-color: $added_item_color
+  .count
+    background-color: $added_item_color
+    text-align: right
+    padding-right: 25px
+  .add_name
+    padding: 0 20px
+  .add_price
+    position: absolute
+    right: 20px
+    padding-top: 4px
+
+.item_goods
+  margin-bottom: 35px
+  padding-top: 20px
+  position: relative
+  width: 90%
+  .gd_name
+    padding: 15px 0 25px 0
+    margin: 0
+    display: inline-block
+    font-weight: 700
+    font-size: 1.1rem
+  .gd_price
+    position: absolute
+    top: 34.5px
+    right: 80px
+    display: inline-block
+  .gd_photo
+    float: right
+    padding-right: 20%
+    margin-left: 15px
+    padding-bottom: 30px
+  .gd_desc
+    margin: 0
+    padding: 15px 0
+  .gd_features
+    padding-top: 15px
+  .add_btn
+    margin-top: 30%
+    position: absolute
+    bottom: 14px
+    left: 15px
+
+@media only screen and (max-width: 1024px)
+  .show_cart
+    right: 27px
+  .cart_btn
+    right: 170px
+  .item_goods
+    width: 80%
+    .gd_name
+      padding-left: 50px
+    .gd_desc
+      display: inline-block
+      padding: 15px 45px
+    .gd_features
+      padding-left: 45px
+    .add_btn
+      left: 45px
+      bottom: 27px
+@media only screen and (max-width: 640px)
+  .show_cart
+    right: 0
+  .cart_btn
+    right: 100px
+  .item_goods
+    .add_btn
+      position: relative
+      margin: 30px auto
+      width: 100%
+
+    .gd_features
+      display: inline-block
+    .gd_photo
+      float: none
+
+@media only screen and (max-width: 570px)
+  .show_cart
+    width: 95%
+    position: relative
+    min-width: 265px
+  .cart_btn
+    right: 40px
+  .gd_price
+    position: relative
+    padding-top: 45px
+    text-align: center

@@ -15,7 +15,7 @@ export default class Search extends Component {
       <div>
         <form onSubmit={e => this.onSubmitForm(e)} >
           <input type="search" ref="searchText" placeholder="Search" />
-          <button className="button expanded">Go</button>
+          <button className="button">Go</button>
         </form>
       </div>
     );

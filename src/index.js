@@ -6,8 +6,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        123
+      <div className="row">
         <Store />
       </div>
     );
@@ -17,5 +16,5 @@ class App extends Component {
 
 ReactDOM.render(
     <App />,
-    document.querySelector('.container')
+    document.querySelector('.app')
 );
