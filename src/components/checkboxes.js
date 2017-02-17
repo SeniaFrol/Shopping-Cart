@@ -25,27 +25,27 @@ export default class checkBoxes extends Component {
         </div>
           <div>
             <label>
-            <input type="checkbox" checked={data[1].status}  onChange={(e) => this.getData("lg")}/>LG</label>
+            <input type="checkbox" checked={data[1].status}  onChange={() => this.getData("lg")}/>LG</label>
           </div>
           <div>
             <label>
-            <input type="checkbox" checked={data[2].status}  onChange={(e) => this.getData("samsung")}/>Samsung</label>
+            <input type="checkbox" checked={data[2].status}  onChange={() => this.getData("samsung")}/>Samsung</label>
           </div>
           <div>
             <label>
-            <input type="checkbox" checked={opt[0].status}  onChange={(e) => this.getOpt("camera")}/>Camera</label>
+            <input type="checkbox" checked={opt[0].status}  onChange={() => this.getOpt("camera")}/>Camera</label>
           </div>
           <div>
             <label>
-            <input type="checkbox" checked={opt[1].status}  onChange={(e) => this.getOpt("radio")}/>Radio</label>
+            <input type="checkbox" checked={opt[1].status}  onChange={() => this.getOpt("radio")}/>Radio</label>
           </div>
           <div>
             <label>
-            <input type="checkbox" checked={opt[2].status}  onChange={(e) => this.getOpt("mp3")} />MP3 Player</label>
+            <input type="checkbox" checked={opt[2].status}  onChange={() => this.getOpt("mp3")} />MP3 Player</label>
           </div>
           <div>
             <label>
-            <input type="checkbox" checked={opt[3].status} onChange={(e) => this.getOpt("internet")} />Mobile Internet</label>
+            <input type="checkbox" checked={opt[3].status} onChange={() => this.getOpt("internet")} />Mobile Internet</label>
           </div>
       </div>
     );

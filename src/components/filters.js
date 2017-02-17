@@ -24,18 +24,18 @@ export default {
     const sText = searchText.toLowerCase();
 
     // Filter by search text
-    list = list.filter((item) => {
+    list = list.filter(item => {
       const name = item.name.toLowerCase();
       return (sText.length === 0 || name.indexOf(sText) > -1);
     });
     // All checked BRANDS
-    const checkedList = data.filter((dt) => {
+    const checkedList = data.filter(dt => {
       if(dt.status === true) {
         return dt;
       }
     });
     //All checked OPTIONS
-    const checkedOpt = opt.filter((option) => {
+    const checkedOpt = opt.filter(option => {
       if(option.status === true) {
         return option;
       }
@@ -57,7 +57,7 @@ export default {
     list4.pop();
 
     // Filter by BRAND
-    const listBR = list.filter((item) => {
+    const listBR = list.filter(item => {
       const name = item.brand.toLowerCase();
       return (list2.indexOf(name) > -1 || x === 0);
     });
@@ -66,7 +66,7 @@ export default {
     let count = 0;
     const len = list4.length;
 
-    const listOP = listBR.filter((item) => {
+    const listOP = listBR.filter(item => {
               let optionItem = item.features;
               let x = this.sayCondition(optionItem, list4);
               return (x || x1 === 0);

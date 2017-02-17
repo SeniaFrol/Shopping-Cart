@@ -19,15 +19,15 @@ export default class Store extends Component {
       cartItems: []
     };
   }
-  handleChange = (searchText) => {
+  handleChange = searchText => {
     this.setState({
       searchText
     });
   }
   // Reverses checkbox and sets states if fired.
   //For brand
-  handleCheckBoxed = (name) => {
-    const updatedCheck = this.state.checked.map((item) => {
+  handleCheckBoxed = name => {
+    const updatedCheck = this.state.checked.map(item => {
       if(item.name === name) {
         item.status = !item.status;
       }
@@ -37,8 +37,8 @@ export default class Store extends Component {
   }
   // Reverses checkbox and sets states if fired.
   //For features
-  handleCheckOption = (optName) => {
-    const updatedCheckOpt = this.state.opt.map((item) => {
+  handleCheckOption = optName => {
+    const updatedCheckOpt = this.state.opt.map(item => {
       if(item.name === optName) {
         item.status = !item.status;
       }
@@ -63,8 +63,8 @@ export default class Store extends Component {
     });
   }
 
-  handleRemove = (id) => {
-    const removeitem = this.state.cartItems.filter((item) => {
+  handleRemove = id => {
+    const removeitem = this.state.cartItems.filter(item => {
       if(item.DateID !== id) {
         return true;
       }
@@ -84,9 +84,7 @@ export default class Store extends Component {
       <div className="cart">
         <div className="top-bar">
           <div className="top-bar-left">
-            <div className="menu-name">
-            ONLINE STORE
-            </div>
+            <div className="menu-name">ONLINE STORE</div>
           </div>
         </div>
         <Cart items={added} removeItem={this.handleRemove}/>
@@ -97,7 +95,6 @@ export default class Store extends Component {
         </div>
 
         <div>
-
           <div className="medium-2 column">
             <CheckBoxes boxes={this.handleCheckBoxed} data={data} opt={option} option={this.handleCheckOption}/>
           </div>
@@ -106,7 +103,6 @@ export default class Store extends Component {
             <ListOfGoods goods={filteredGoods} addToCart={this.handleAdd}/>
           </div>
         </div>
-
       </div>
     );
   }

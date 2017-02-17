@@ -13,7 +13,7 @@ export default class Cart extends Component {
   sumPrice(prices, items) {
     if(items.length > 1){
       prices = prices.toFixed(2);
-      return "Total count: $" + prices;
+      return `Total count: $${prices}`;
     } else {
       return '';
     }
@@ -27,7 +27,7 @@ export default class Cart extends Component {
   render() {
     const stat = this.state.clicked;
     let sum = 0;
-    const items = this.props.items.map((item) => {
+    const items = this.props.items.map(item => {
         sum+= parseFloat(item.price);
         return (
             <li className="add_item" key={item.DateID} ><button  className="x_btn" onClick={() => this.onSpanChange(item.DateID)}>X</button>
@@ -39,7 +39,7 @@ export default class Cart extends Component {
 
     return(
       <div>
-      <button className="button cart_btn" onClick={(e) => this.btnChange(e)}>Cart</button>
+      <button className="button cart_btn" onClick={e => this.btnChange(e)}>Cart</button>
         <div className={stat ? "show_cart" : "hide_cart"}>
           <ul>{items}
           <li className="count">{showSum}</li></ul>

@@ -3,7 +3,7 @@ import GoodsItem from './GoodsItem';
 
 export default class ListOfGoods extends Component {
   render() {
-    const goodsItems = this.props.goods.map((item) => {
+    const goodsItems = this.props.goods.map(item => {
         return (
             <GoodsItem
                 key={item.id}
@@ -11,6 +11,7 @@ export default class ListOfGoods extends Component {
                 addToCart={this.props.addToCart} />
         )
 });
+    //  Shows list of items
     return(
       <div>
         {goodsItems}

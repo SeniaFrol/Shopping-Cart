@@ -4,12 +4,12 @@ export default class Search extends Component {
 
   onSubmitForm(e) {
     e.preventDefault();
-    var searchText = this.refs.searchText.value;
+    const searchText = this.refs.searchText.value;
 
     this.refs.searchText.value = '';
     this.props.onFormChange(searchText);
   }
-
+  // Renders search form
   render() {
     return(
       <div>
