@@ -17,8 +17,8 @@ export default class GoodsItem extends Component {
           </div>
 
           <p className="gd_desc cf">{description}</p>
-          <img className="gd_photo cf"src={src}></img>
-          <p className="gd_features">{features}</p>
+          <div className="gd_photo cf" ><img src={src}></img></div>
+          <div className="gd_features">{features}</div>
 
             <button className="button hollow add_btn"  onClick={() => this.onInputChange(id, name, src, price)}>Add to cart</button>
         </div>
