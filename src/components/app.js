@@ -84,7 +84,7 @@ export default class Store extends Component {
       <div className="cart">
         <div className="top-bar">
           <div className="top-bar-left">
-            <div className="menu-name">ONLINE STORE</div>
+            <div className="menu-name"><p>ONLINE STORE</p></div>
           </div>
         </div>
         <Cart items={added} removeItem={this.handleRemove}/>
@@ -94,12 +94,12 @@ export default class Store extends Component {
           <Search onFormChange={this.handleChange}/>
         </div>
 
-        <div>
+        <div className="row content_data">
           <div className="medium-2 column">
             <CheckBoxes boxes={this.handleCheckBoxed} data={data} opt={option} option={this.handleCheckOption}/>
           </div>
 
-          <div className="medium-10 column">
+          <div className="medium-10 column border_left">
             <ListOfGoods goods={filteredGoods} addToCart={this.handleAdd}/>
           </div>
         </div>

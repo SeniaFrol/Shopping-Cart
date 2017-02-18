@@ -1,17 +1,39 @@
-$btn_color: purple
-$check_color: #9932CC
-$added_item_color: #F8F8FF
+@import url('https://fonts.googleapis.com/css?family=Open+Sans')
+
+@mixin input_placeholder($color)
+  &::-webkit-input-placeholder
+    color: $color
+  &:-moz-placeholder
+    color: $color
+  &::-moz-placeholder
+    color: $color
+  &:-ms-input-placeholder
+    color: $color
+
+$open_sans: 'Open Sans', sans-serif
+$check_color: #8275a5
+$added_item_color: #ffffff
+$main_color: #472581
+$backgr_color: #f1edf4
+$main_link_active: #9887bf
+$btn_add: #faea18
+$border_color: #503086
+$input_ph_color: #d2c2e3
+$shadow_color: #dbd7dd
+$buy_border_color: #f4f4f4
 
 *
-  font-family: "Comic Sans MS", cursive, sans-serif
+  font-family: $open_sans
+
+body
+  background-color: $backgr_color
 
 .app
   height: 50px
-  background-color: purple
-
+  background-color: $main_color
 
 .top-bar
-  background-color: purple
+  background-color: $main_color
   color: white
   font-weight: 700
   height: 50px
@@ -19,61 +41,108 @@ $added_item_color: #F8F8FF
 .top-bar-left
   padding-top: 5px
 
-
-.hide_cart
-  display: none
-
 .cart
   position: relative
 
-.cart_btn
+.cart_btn, .cart_btn_clicked
   position: absolute
   top: 0
-  right: 140px
+  right: 13px
   height: 50px
-  background-color: $btn_color
+  font-size: 17px
+  background-color: $main_color
   outline: none
-  font-weight: 700
+
 .button:hover
-  background-color: $btn_color
+  background-color: $main_link_active
 .button:focus
-  background-color: $btn_color
+  background-color: $main_link_active
+
+.cart_btn_clicked
+  background-color: $main_link_active
 
 .search_bar
-  padding: 20px 0
+  padding: 20px 0 5px 0
   display: flex
   justify-content: flex-start
+  .input_and_button
+    width: 500px
   button
-    float: right
-    border-radius: 4px
-    background-color: $btn_color
+    float: left
+    border-radius: 2px
     outline: none
-    :hover
-      background-color: $btn_color
-    :focus
-      background-color: $btn_color
+    height: 31px
+    line-height: 0
+    width: 65px
+    font-size: 17px
+    background-color: $main_link_active
+    color: black
+    &:hover
+      color: black
+    &:focus
+      color: black
   input
     margin-left: 12px
-    width: 77%
+    border: 2.5px solid #bebccc
+    border-right: 1px solid #bebccc
+    float: left
+    width: 76%
+    height: 31px
     display: inline
+    @include input-placeholder($input_ph_color)
+    &:active
+      border: 2.5px solid #bebccc
+      border-right: 1px solid #bebccc
+
+    &:focus
+      border: 2.5px solid #bebccc
+      border-right: 1px solid #bebccc
+
+.menu-name
+  p
+    margin-bottom: 0
+    padding: 0
+    font-size: 27px
+    line-height: 1
 
 .cf:after, .cf:before
   content: " "
   display: table
 .cf:after
   clear: both
+.row .row
+  margin: 0 13px
 .checkboxes
   padding-top: 30px
+  label
+    padding-left: 12px
+    input
+      margin-bottom: 10px
+    span
+      font-weight: 600
+  p:first-child
+    font-weight: 700
+  .check_option
+    margin: 0
+    padding-bottom: 5px
+    font-weight: 600
+
 .checkboxes, label
   color: $check_color
 
 .column:last-child:not(:first-child)
   float: left
 
+.content_data
+  background-color: white
+
+.hide_cart
+  display: none
+
 .show_cart
   width: 350px
   position: absolute
-  right: 137px
+  right: 13px
   z-index: 1
   .x_btn
     padding: 0 10px
@@ -82,20 +151,39 @@ $added_item_color: #F8F8FF
     outline: none
   ul
     list-style-type: none
+    box-shadow: 5px 5px 5px $shadow_color
   img
     width: 20px
   .add_item
     background-color: $added_item_color
+    padding-bottom: 7px
   .count
     background-color: $added_item_color
     text-align: right
-    padding-right: 25px
+    padding-right: 18px
+    padding-bottom: 1px
+    border-top: 1px solid $buy_border_color
+    .total_money
+      float: left
+      padding-top: 3px
+      padding-left: 34px
+      margin-bottom: 0
+    button
+      margin-bottom: 0
+      height: 31px
+      line-height: 0
+      background-color: #faea18
+      color: black
   .add_name
     padding: 0 20px
   .add_price
     position: absolute
     right: 20px
     padding-top: 4px
+
+.border_left
+  border-left: 1px solid $border_color
+  padding-left: 50px
 
 .item_goods
   margin-bottom: 35px
@@ -110,9 +198,10 @@ $added_item_color: #F8F8FF
     font-size: 1.1rem
   .gd_price
     position: absolute
-    top: 34.5px
+    top: 37px
     right: 80px
     display: inline-block
+    font-weight: 600
   .gd_photo
     float: right
     padding-right: 20%
@@ -121,13 +210,19 @@ $added_item_color: #F8F8FF
   .gd_desc
     margin: 0
     padding: 15px 0
+    display: inline-block
   .gd_features
     padding-top: 15px
   .add_btn
+    outline: none
+    background-color: $btn_add
+    color: black
     margin-top: 30%
+    padding-left: 1.25em
+    padding-right: 1.25em
     position: absolute
     bottom: 14px
-    left: 15px
+    left: 5px
 
 @media only screen and (max-width: 1023px)
   .medium-10
@@ -137,20 +232,23 @@ $added_item_color: #F8F8FF
   .show_cart
     right: 27px
   .cart_btn
-    right: 170px
+    right: 28px
+  .border_left
+    padding-left: 20px
   .item_goods
     width: 80%
     .gd_name
       padding-left: 50px
     .gd_desc
-      display: inline-block
       padding: 15px 45px
     .gd_features
       padding-left: 45px
     .add_btn
       left: 45px
       bottom: 27px
-@media only screen and (max-width: 768px)
+    .gd_price
+      right: 100px
+@media only screen and (max-width: 770px)
   .medium-10
     width: 100%
   .medium-2
@@ -161,9 +259,9 @@ $added_item_color: #F8F8FF
   .search_bar
     padding-left: 40px
   .show_cart
-    right: 0
+    right: 10px
   .cart_btn
-    right: 100px
+    right: 10px
   .item_goods
     width: 100%
     .add_btn
@@ -184,6 +282,7 @@ $added_item_color: #F8F8FF
       position: relative
       display: block
       padding-top: 0
+      margin-bottom: 0
       text-align: center
       top: 0
       right: 0
@@ -191,6 +290,7 @@ $added_item_color: #F8F8FF
       display: block
       text-align: center
       padding-left: 0
+      padding-bottom: 5px
     .gd_desc
       display: block
       text-align: center
@@ -201,6 +301,6 @@ $added_item_color: #F8F8FF
     position: relative
     min-width: 265px
   .cart_btn
-    right: 40px
+    right: 37px
   .gd_price
     padding-top: 45px

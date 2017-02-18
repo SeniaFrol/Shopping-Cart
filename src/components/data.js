@@ -10,7 +10,7 @@ export default [{
   "id": "2",
   "name": "Nokia 2",
   "description": "Super phone",
-  "price": "12.99",
+  "price": "162.99",
   "brand": "Nokia",
   "src": "https://content2.onliner.by/catalog/device/header/4d99742ae1d562f2057c65a41d2d0af9.jpg",
   "features": "radio, camera"
@@ -81,7 +81,7 @@ export default [{
 }, {
   "id": "11",
   "name": "Nokia 105",
-  "description": "Realy super phone",
+  "description": "Super phone",
   "price": "10.75",
   "brand": "Nokia",
   "src": "https://content2.onliner.by/catalog/device/header/57d14e889649042a74459eead819aef2.jpg",

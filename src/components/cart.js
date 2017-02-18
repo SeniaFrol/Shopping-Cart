@@ -12,14 +12,22 @@ export default class Cart extends Component {
 
   sumPrice(prices, items) {
     if(items.length > 1){
-      prices = prices.toFixed(2);
-      return `Total count: $${prices}`;
+      const ButtonBuy = () => {
+        prices = prices.toFixed(2);
+        return(
+          <div>
+            <p className="total_money">${prices}</p>
+            <button className="button">BUY</button>
+          </div>
+        );
+      };
+      return (<ButtonBuy />);
     } else {
       return '';
     }
   }
 
-  btnChange(e) {
+  btnChange() {
     let x = this.state.clicked;
     this.setState({ clicked: !x});
   }
@@ -39,7 +47,7 @@ export default class Cart extends Component {
 
     return(
       <div>
-      <button className="button cart_btn" onClick={e => this.btnChange(e)}>Cart</button>
+      <button className={stat ? " button cart_btn_clicked" : "button cart_btn" } onClick={() => this.btnChange()}>Cart</button>
         <div className={stat ? "show_cart" : "hide_cart"}>
           <ul>{items}
           <li className="count">{showSum}</li></ul>

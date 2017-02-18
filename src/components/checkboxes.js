@@ -19,6 +19,7 @@ export default class checkBoxes extends Component {
     return(
       <div className="checkboxes">
       <p>Phone finder</p>
+      <p className="check_option">Brand:</p>
         <div>
           <label>
           <input type="checkbox" checked={data[0].status}  onChange={() => this.getData("nokia")} />Nokia</label>
@@ -31,6 +32,7 @@ export default class checkBoxes extends Component {
             <label>
             <input type="checkbox" checked={data[2].status}  onChange={() => this.getData("samsung")}/>Samsung</label>
           </div>
+          <p className="check_option">Features:</p>
           <div>
             <label>
             <input type="checkbox" checked={opt[0].status}  onChange={() => this.getOpt("camera")}/>Camera</label>
