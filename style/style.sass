@@ -40,7 +40,6 @@ body
 
 .top-bar-left
   padding-top: 5px
-
 .cart
   position: relative
 
@@ -102,6 +101,7 @@ body
   p
     margin-bottom: 0
     padding: 0
+    padding-left: 5px
     font-size: 27px
     line-height: 1
 
@@ -114,6 +114,7 @@ body
   margin: 0 13px
 .checkboxes
   padding-top: 30px
+  padding-bottom: 30px
   label
     padding-left: 12px
     input
@@ -184,7 +185,6 @@ body
 .border_left
   border-left: 1px solid $border_color
   padding-left: 50px
-
 .item_goods
   margin-bottom: 35px
   padding-top: 20px
@@ -224,6 +224,57 @@ body
     bottom: 14px
     left: 5px
 
+.medium-1
+  width: 14%
+  padding-top: 13px
+
+.icons_list
+  padding-bottom: 5px
+  .medium-1
+    padding-top: 0
+  .payment_icons
+    img
+      width: 64px
+      padding-right: 10px
+  .social_media_icons
+    padding-left: 18px
+    img
+      width: 36px
+      padding-right: 5px
+  ul
+    list-style: none
+    li
+      .shld
+        padding-left: 7px
+      .shield_icon
+        width: 50px
+    p
+      margin: 0
+      padding-top: 20px
+      padding-bottom: 10px
+      color: $check_color
+      font-weight: 700
+
+footer
+  background-color: $main_color
+  .footer_title
+    color: $main_link_active
+    padding-left: 20px
+    font-weight: 600
+  .footer_links
+    padding-bottom: 22px
+  ul
+    list-style: none
+    padding-top: 9px
+    li
+      line-height: 90%
+    a
+      color: $main_link_active
+      text-decoration: underline
+      font-size: 13px
+      &:hover
+        color: $main_link_active
+
 @media only screen and (max-width: 1023px)
   .medium-10
     width: 75%
@@ -231,12 +282,12 @@ body
     width: 25%
   .show_cart
     right: 27px
-  .cart_btn
+  .cart_btn, .cart_btn_clicked
     right: 28px
   .border_left
     padding-left: 20px
   .item_goods
-    width: 80%
+    width: 90%
     .gd_name
       padding-left: 50px
     .gd_desc
@@ -249,18 +300,20 @@ body
     .gd_price
       right: 100px
 @media only screen and (max-width: 770px)
+  .border_left
+    border: none
+  .border_right
+    border-bottom: 1px solid $border_color
   .medium-10
     width: 100%
   .medium-2
     width: 100%
   .checkboxes
-    padding-top: 0
-    padding-left: 40px
-  .search_bar
+    padding-top: 30px
     padding-left: 40px
   .show_cart
     right: 10px
-  .cart_btn
+  .cart_btn, .cart_btn_clicked
     right: 10px
   .item_goods
     width: 100%
@@ -296,11 +349,17 @@ body
       text-align: center
 
 @media only screen and (max-width: 570px)
+  .medium-1
+    display: inline-block
+  .search_bar
+    .input_and_button
+      input
+        width: 50%
   .show_cart
     width: 95%
     position: relative
     min-width: 265px
-  .cart_btn
+  .cart_btn, .cart_btn_clicked
     right: 37px
   .gd_price
     padding-top: 45px

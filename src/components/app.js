@@ -6,6 +6,9 @@ import CheckBoxes from './checkboxes.js';
 import Cart from './cart.js';
 import Filters from './filters.js';
 
+import Payment from './payment_template.js';
+import Footer from './footer.js';
+
 export default class Store extends Component {
   constructor(props) {
     super(props);
@@ -80,7 +83,8 @@ export default class Store extends Component {
     const option = this.state.opt;
     const added = this.state.cartItems;
     return (
-      <div className="">
+      <div>
+      <div className="row">
       <div className="cart">
         <div className="top-bar">
           <div className="top-bar-left">
@@ -95,7 +99,7 @@ export default class Store extends Component {
         </div>
 
         <div className="row content_data">
-          <div className="medium-2 column">
+          <div className="medium-2 column border_right">
             <CheckBoxes boxes={this.handleCheckBoxed} data={data} opt={option} option={this.handleCheckOption}/>
           </div>
 
@@ -103,6 +107,10 @@ export default class Store extends Component {
             <ListOfGoods goods={filteredGoods} addToCart={this.handleAdd}/>
           </div>
         </div>
+      </div>
+
+      <Payment />
+      <Footer />
       </div>
     );
   }
