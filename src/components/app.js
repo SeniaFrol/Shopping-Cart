@@ -22,11 +22,14 @@ export default class Store extends Component {
       cartItems: []
     };
   }
+  
+  // Sets searchText that was received from SearchText component
   handleChange = searchText => {
     this.setState({
       searchText
     });
   }
+  
   // Reverses checkbox and sets states if fired.
   //For brand
   handleCheckBoxed = name => {
@@ -38,6 +41,7 @@ export default class Store extends Component {
     });
      this.setState({checked: updatedCheck});
   }
+  
   // Reverses checkbox and sets states if fired.
   //For features
   handleCheckOption = optName => {
